@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from datetime import timedelta
 
+from django.conf import settings
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,17 +30,19 @@ SECRET_KEY = 'django-insecure-bdi0!!73l9ty5#gi$$64ul*k_q074$=rap6c@cws#mj$gqzt=u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
 
     'http://localhost:8000',
+    'http://localhost:8001',
     'http://localhost:5001',
     'http://localhost:3000',
     'http://localhost:5173',
+
 ]
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,7 +52,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+    'django_vite',
+    'client',
+
+
     'myusers.apps.MyusersConfig',
+    'chat.apps.ChatConfig',
+
+    'django_vite_plugin',
 
 
     'rest_framework',
@@ -63,6 +76,58 @@ INSTALLED_APPS = [
 
 
 AUTH_USER_MODEL = 'myusers.NewUser'
+
+
+INTERNAL_IPS = ['127.0.0.1']
+
+VITE_APP_DIR = BASE_DIR / "client"
+
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / "client/"
+# Application definition
+
+
+
+
+
+from django.conf import settings
+
+
+
+
+CONFIG = {
+    'BUILD_URL_PREFIX': '/ 127.0.0.1:5173/',
+    # other key-value pairs...
+}
+
+# Other settings
+DJANGO_VITE_PLUGIN = {
+    'WS_CLIENT': '@vite/client',
+    'DEV_MODE': getattr(settings, 'DEBUG', True),
+    'BUILD_DIR': getattr(settings, 'STATIC_ROOT') or 'static',
+    # Bundled assets would be prefixed with this on production
+    # 'BUILD_URL_PREFIX': getattr(settings, 'STATIC_URL', ''),
+    'BUILD_URL_PREFIX' : CONFIG.get('BUILD_URL_PREFIX'),
+ 
+
+    'SERVER': {
+        'HTTPS': False,
+        'HOST': '127.0.0.1',
+        'PORT': 5173
+    },
+    'JS_ATTRS': {
+        'type': 'module'
+    },
+    'CSS_ATTRS': {
+        'rel': 'stylesheet',
+        'type': 'text/css'
+    },
+    'STATIC_LOOKUP': True
+}
+
+
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,7 +145,8 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [BASE_DIR / 'client/dist', 'client/chat/templates', 'client/index.html', 'client/dist/templates'],
+        'DIRS': [BASE_DIR / 'client/dist', 'client/chat/templates',  'client/dist/templates', 'client/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -149,13 +215,14 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 
 
 STATICFILES_DIRS = [
+    VITE_APP_DIR / "dist",
     BASE_DIR / 'static',
     # os.path.join(BASE_DIR, 'build/static'),
     # os.path.join(BASE_DIR, 'static')
 ]
 
-if not DEBUG:
-    STATIC_ROOT = ''
+# if not DEBUG:
+#     STATIC_ROOT = ''
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

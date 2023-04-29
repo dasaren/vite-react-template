@@ -1,0 +1,29 @@
+{% load vite %}
+{% load django_vite %}
+<!DOCTYPE html>
+{% vite 'client/dist/assets/index-616002e7.css' 'client/dist/assets/main-3e6c9c8f.js' %}
+<!--  -->
+
+<html lang="en">
+  <head>
+    {% vite_hmr_client %}
+    {% vite %}
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    {% vite 'client/dist/assets' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Vite + React</title>
+    {% vite 'client/dist/assets/main-3e6c9c8f.js' %}
+    <script type="module" crossorigin src="/assets/main-3e6c9c8f.js"></script>
+    <link rel="stylesheet" href="/assets/index-616002e7.css" />
+
+    {% vite 'client/dist/assets/index-616002e7.css' 'client/dist/assets/main-3e6c9c8f.js' %}
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
+  </body>
+</html>

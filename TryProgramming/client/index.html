@@ -1,13 +1,24 @@
+{% load vite %}
+
+{% load django_vite %}
 <!DOCTYPE html>
+{% vite 'client/dist/assets/index-616002e7.css' %}
+{% vite_hmr_client %}
+{% vite %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    {% vite 'client/dist/assets' %}
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    {% vite 'client/dist/assets/main-3e6c9c8f.js' %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    {% vite 'client/dist/assets/index-616002e7.css' 'client/dist/assets/main-3e6c9c8f.js' %}
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+  
   </body>
 </html>

@@ -1,0 +1,36 @@
+// {
+//   "compilerOptions": {
+//     "lib": ["es2020", "DOM"],
+//     "moduleResolution": "node",
+//     "target": "es2020",
+//     "checkJs": true,
+//     "jsx": "react",
+//     "types": ["cypress", "@testing-library/cypress"],
+//     "baseUrl": "src"
+//   },
+//   "include": ["src/**/*.js", "src/**/*.jsx", "cypress/**/*.js", "src"],
+//   "exclude": ["node_modules"]
+// }
+
+
+
+{
+	"compilerOptions": {
+		"baseUrl": "src",
+        "jsx": "react",
+	},
+	"include": ["src"]
+
+
+}
+
+
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["src/*"]
+//     }
+//   },
+
+// }
