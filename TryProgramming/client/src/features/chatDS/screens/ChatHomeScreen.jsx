@@ -36,9 +36,57 @@ const ChatHomeScreen = () => {
   const addTopicHandler = () => {
     setShowModal(true);
   };
+  //
+  //
+
+  console.log("status:  ", window.navigator.onLine);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [isOffline, setIsOffline] = useState(!navigator.online);
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 4000);
+    }
+    
+    const handleOffline = () =>  {
+      setIsOnline(false);
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 4000);
+    }
+
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
+
+  const see = (
+    <div className=" bg-red-500 px-2 py-2  ">
+      <h2>User Status: {isOnline ? "Online" : "Offline"}</h2>
+    </div>
+  );
 
   return (
     <Layout>
+      {/* {see} */}
+      {showMessage && 
+        <p>{see}</p>
+        // <div>
+        //   {isOnline ? (
+        //     <p>User is online</p>
+        //   ) : (
+        //     <p>User is offline</p>
+        //   )}
+        // </div>
+      }
+     
       {/* {error && (
         <Message>
           <span className="flex place-content-center place-items-center">
@@ -50,7 +98,7 @@ const ChatHomeScreen = () => {
         {showModal && (
           <CreateFeedModal showModal={showModal} setShowModal={setShowModal} />
         )}
-        <div className="sticky  top-0 right-0 left-0 col-span-3 max-sm:hidden">
+        <div className="sticky  left-0 right-0 top-0 col-span-3 max-sm:hidden">
           <ChatLinks topics={topics} userProfile={userProfile} user={user} />
         </div>
         <div className="over col-span-6 max-lg:col-span-9 max-sm:col-span-12">
@@ -62,6 +110,7 @@ const ChatHomeScreen = () => {
               Create Feed
             </button>
           </div>
+         
           {/* <div
             className="card my-3 flex h-16 p-2  hover:cursor-pointer sm:hidden"
             onClick={selectTopicHandler}

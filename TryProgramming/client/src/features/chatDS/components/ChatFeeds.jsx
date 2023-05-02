@@ -14,15 +14,20 @@ import { Link } from "react-router-dom";
 
 dayjs.extend(relativeTime);
 
-const ChatFeeds = ({ comments, topics, userProfile }) => {
+const ChatFeeds = ({ comments, topics}) => {
   const dispatch = useDispatch();
-  // const { userProfile } = useSelector((store) => store.myuser);
+
+ 
+  
 
   const [num, setNum] = useState(Number(5));
 
-  // useEffect(() => {
-  //   dispatch(getUserInfo());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getUserInfo());
+  }, [dispatch]);
+  const { userProfile, isAuthenticated, registered } = useSelector(
+    (store) => store.myuser
+  );
 
   // useState(() => {}, [topics]);
 
@@ -39,6 +44,7 @@ const ChatFeeds = ({ comments, topics, userProfile }) => {
       dispatch(getTopics());
     }, 500);
   };
+
   return (
     <div className="my-3 grid  w-full gap-2">
       {topics?.length > 0 &&
