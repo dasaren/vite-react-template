@@ -145,7 +145,7 @@ const MyFooter = () => {
       >
         © {new Date().getFullYear()} Copyright:
         <a className="text-whitehite ml-1 text-teal-800" href="#">
-          DSsssssssssssss ENTERPRISE
+          DSs ENTERPRISE
         </a>
       </div>
     </footer>
