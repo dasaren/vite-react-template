@@ -151,14 +151,16 @@ export const tokenLogin = createAsyncThunk(
 export const mytoken = createAsyncThunk(
   "myuser/mytoken",
   async ({ email, password }, thunkAPI) => {
+    console.log(email, password, 'checking....')
     try {
       let response = await axios.post(`${baseURL}token/`, {
         email: email,
         password: password,
       });
-      console.log("re is 200", response);
+      console.log("re is 200ggg", response);
       console.log("re is 200 and ...", response.data);
       if (response.status === 200) {
+        console.log("fine fine ")
         console.log('rrrrrrrrr', response.data)
         localStorage.setItem("access_token", response.data.access);
         localStorage.setItem("refresh_token", response.data.refresh);
@@ -264,7 +266,7 @@ export const register = createAsyncThunk(
       if (response.status === 201) {
         return response.data;
       } else {
-        return thunkAPI.rejectWithValue(data);
+        return thunkAPI.rejectWithValue(response.data);
       }
 
       //   const data = await response.data()
@@ -384,6 +386,7 @@ export const myUserSlice = createSlice({
       // console.log('ssssaa biaaa', action.payload)
     });
     builder.addCase(mytoken.rejected, (state, action) => {
+      console.log(' it did not work', action.payload)
       state.loading = false;
     });
     builder.addCase(mysocialtokenlogin.pending, (state, action) => {
