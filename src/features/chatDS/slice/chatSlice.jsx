@@ -22,7 +22,8 @@ export const getTopics = createAsyncThunk(
   async (args, { rejectWithValue }) => {
     try {
       let response = await axiosDannyInstance(
-        `http://localhost:8000/api/topic/?q=${args ? args : ""}`
+        `topic/?q=${args ? args : ""}`
+        // `http://localhost:8000/api/topic/?q=${args ? args : ""}`
         // let response = await axiosDannyInstance(
         //   baseURL +
         //     `api/prd/myp/?page=${args.page}&q=${args.query ? args.query : ""}`
@@ -42,7 +43,8 @@ export const getTopic = createAsyncThunk(
   async (args, { rejectWithValue }) => {
     try {
       let response = await axiosDannyInstance(
-        `http://localhost:8000/api/topic/${args}/`
+        `topic/${args}/`
+        // `http://localhost:8000/api/topic/${args}/`
         // let response = await axiosDannyInstance(
         //   baseURL +
         //     `api/prd/myp/?page=${args.page}&q=${args.query ? args.query : ""}`
