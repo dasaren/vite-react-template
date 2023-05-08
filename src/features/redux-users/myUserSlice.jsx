@@ -5,6 +5,7 @@ import jwt_decode from "jwt-decode";
 import axiosInstance from "app/utils/dannysaxios";
 import axiosDannyInstance from "app/utils/dannysaxios";
 import axiosAuthInstance from "app/utils/Login";
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const tryUserFromStorage = JSON.parse(localStorage.getItem("userProfile"))
   ? JSON.parse(localStorage.getItem("userProfile"))
@@ -140,7 +141,7 @@ export const tokenLogin = createAsyncThunk(
         return response.data;
       }
 
-      console.log(finnaly);
+      console.log('finnaly');
     } catch (err) {
       console.error("inuserslice token error", err);
       return thunkAPI.rejectWithValue(err.response.data);
@@ -253,7 +254,8 @@ export const register = createAsyncThunk(
     // const body = { first_name, last_name, email, password }
     try {
       let response = await axios.post(
-        "http://localhost:8000/api/users/register/",
+        `${baseURL}users/register/`,
+        // "http://localhost:8000/api/users/register/",
         args
       );
       console.log("auth", response);
