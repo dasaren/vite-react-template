@@ -152,7 +152,7 @@ export const mytoken = createAsyncThunk(
   "myuser/mytoken",
   async ({ email, password }, thunkAPI) => {
     try {
-      let response = await axios.post("http://localhost:8000/api/token/", {
+      let response = await axios.post(`${baseURL}token/`, {
         email: email,
         password: password,
       });
