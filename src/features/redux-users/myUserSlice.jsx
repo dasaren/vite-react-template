@@ -153,7 +153,7 @@ export const mytoken = createAsyncThunk(
   async ({ email, password }, thunkAPI) => {
     console.log(email, password, 'checking....')
     try {
-      let response = await axios.post(`${baseURL}token/`, {
+      let response = await axios.post(`https://django-server-production-dac4.up.railway.app/api/users/register/`, {
         email: email,
         password: password,
       });
