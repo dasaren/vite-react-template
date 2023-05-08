@@ -4,7 +4,8 @@ import dayjs from "dayjs";
 
 // const baseURL = "http://localhost:8000/api/";
 
-const baseURL = import.meta.env.VITE_API_BASE_URL;
+// const baseURL = import.meta.env.VITE_API_BASE_URL;
+const baseURL = "https://django-server-production-dac4.up.railway.app/api/"
 
 let authTokens = localStorage.getItem("access_token")
   ? localStorage.getItem("access_token")
