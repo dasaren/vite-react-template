@@ -258,7 +258,8 @@ export const register = createAsyncThunk(
     // const body = { first_name, last_name, email, password }
     try {
       let response = await axios.post(
-        `${baseURL}users/register/`,
+        `https://django-server-production-dac4.up.railway.app/api/users/register/`,
+        // `${baseURL}users/register/`,
         // "http://localhost:8000/api/users/register/",
         args
       );
