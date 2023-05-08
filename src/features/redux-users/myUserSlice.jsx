@@ -157,7 +157,9 @@ export const mytoken = createAsyncThunk(
         password: password,
       });
       console.log("re is 200", response);
+      console.log("re is 200 and ...", response.data);
       if (response.status === 200) {
+        console.log('rrrrrrrrr', response.data)
         localStorage.setItem("access_token", response.data.access);
         localStorage.setItem("refresh_token", response.data.refresh);
         axiosDannyInstance.defaults.headers["Authorization"] =
