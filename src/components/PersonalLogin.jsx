@@ -126,7 +126,7 @@ const PersonalLogin = () => {
         <div className="mt-4">
           new Here:{" "}
           <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
-            Register
+            <span className="text-blue-500 hover:text-blue-700">Register</span>
           </Link>
         </div>
       </div>

@@ -24,8 +24,19 @@ export default function SignOut() {
     // localStorage.clear()
     axiosInstance.defaults.headers["Authorization"] = null;
     axiosDannyInstance.defaults.headers["Authorization"] = null;
+    // window.location.reload();
+    // navigate("/psignin")
+    // setTimeout(()=>{
+    //   navigate("/")
+    // }, 10)
+    navigate("/")
+    window.location.replace("/psignin")
+    // setTimeout(()=>{
+    //   window.location.replace("/")
+    // }, 5)
 
-    navigate("/psignin");
+
+
   }, []);
   return <div>Logout</div>;
 }

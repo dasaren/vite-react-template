@@ -113,16 +113,16 @@ const RegisterPage = () => {
         // password: data.password,
       })
     );
-    if (registered) return <Navigate to="/login" />;
-    navigate("/login");
+    if (registered) return <Navigate to="/psignin" />;
+    navigate("/psignin");
   };
 
-  if (registered) return <Navigate to="/login" />;
+  if (registered) return <Navigate to="/psignin" />;
 
   return (
     <Layout>
       <div>
-        <pre>data: {JSON.stringify(mine)}</pre>
+        
         {/* <pre>data: {JSON.stringify(data)}</pre> */}
         <div className="mt-10">
           {/* <form className="mt-5" onSubmit={onSubmit}>
@@ -197,7 +197,7 @@ const RegisterPage = () => {
             className="w-full max-w-lg p-8"
             onSubmit={handleSubmit(submitForm)}
           >
-            <div className="-mx-3 mb-6 flex flex-wrap ">
+            <div className="-mx-3  flex flex-wrap ">
               <div className="mb-6 w-full px-3 md:mb-0 md:w-1/2">
                 <label
                   className="mb-2 block text-xs font-bold uppercase tracking-wide text-gray-700"
@@ -214,9 +214,9 @@ const RegisterPage = () => {
                   {...register("username")}
                 />
 
-                {(errors.first_name || errors.last_name) && (
+                {(errors.username || errors.last_name) && (
                   <p className="text-xs italic text-red-500">
-                    all name requirements should be filled
+                    enter name
                   </p>
                 )}
               </div>
