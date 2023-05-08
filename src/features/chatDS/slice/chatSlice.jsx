@@ -21,7 +21,7 @@ export const getTopics = createAsyncThunk(
   "chat/getTopics",
   async (args, { rejectWithValue }) => {
     try {
-      let response = await axiosDannyInstance(
+      let response = await axiosDannyInstance.get(
         `topic/?q=${args ? args : ""}`
         // `http://localhost:8000/api/topic/?q=${args ? args : ""}`
         // let response = await axiosDannyInstance(
@@ -111,7 +111,7 @@ export const getComments = createAsyncThunk(
   "chat/getComments",
   async (id = null, { rejectWithValue }) => {
     try {
-      let response = await axiosDannyInstance(
+      let response = await axiosDannyInstance.get(
         `comment/`
         // let response = await axiosDannyInstance(
         //   baseURL +
