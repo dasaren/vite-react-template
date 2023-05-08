@@ -92,11 +92,11 @@ const Navbar = () => {
   );
 
   const guestLinks = (
-    <>
+    <div className="flex justify-between w-full">
       <NavLink
         style={({ isActive }) => ({ color: isActive ? "red" : "white" })}
         to="/register"
-        className="mt-4 block text-xl text-teal-200 hover:text-white lg:mt-0 lg:inline-block"
+        className="mt-4 block text-xl text-teal-200 hover:text-white lg:mt-0 lg:inline-block mr-2"
       >
         Register
       </NavLink>
@@ -115,7 +115,7 @@ const Navbar = () => {
       >
         <i className="fas fa-user"></i> Personal_Login
       </NavLink>
-    </>
+    </div>
   );
 
   return (
