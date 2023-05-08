@@ -2,7 +2,9 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import dayjs from "dayjs";
 
-const baseURL = "http://localhost:8000/api/";
+// const baseURL = "http://localhost:8000/api/";
+
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 let authTokens = localStorage.getItem("access_token")
   ? localStorage.getItem("access_token")
