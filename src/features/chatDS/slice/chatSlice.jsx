@@ -86,6 +86,7 @@ export const deleteTopic = createAsyncThunk(
 export const addTopics = createAsyncThunk(
   "chat/addTopics",
   async (args, { rejectWithValue }) => {
+    console.log('add topic args ', args)
     try {
       let response = await axiosDannyInstance.post(
         `topic/`,
@@ -94,8 +95,9 @@ export const addTopics = createAsyncThunk(
         //   baseURL +
         //     `api/prd/myp/?page=${args.page}&q=${args.query ? args.query : ""}`
       );
+      console.log('me', response)
       if (response.status === 201) {
-        toast("topic succesufully added", {
+        toast("topic successfully added", {
           position: toast.POSITION.BOTTOM_LEFT,
           className: "toast-message",
         });
