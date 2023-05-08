@@ -88,7 +88,7 @@ export const addTopics = createAsyncThunk(
   async (args, { rejectWithValue }) => {
     try {
       let response = await axiosDannyInstance.post(
-        `http://localhost:8000/api/topic/`,
+        `topic/`,
         args
         // let response = await axiosDannyInstance(
         //   baseURL +
