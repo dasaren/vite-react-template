@@ -17,7 +17,7 @@ const initialState = {
   userProfile: {},
   errors: [],
   isAuthenticated: false,
-  user: null,
+ 
   loading: false,
   registered: false,
   token: "",
