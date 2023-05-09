@@ -90,7 +90,8 @@ const ChatFeeds = ({ comments, topics, userProfile }) => {
                     </div>
 
                     <div className="m-4 max-h-[500px] overflow-scroll   rounded bg-gray-100">
-                      {topic.comment.slice(0, num).map((comments) => (
+                      {/* {topic.comment.slice(0, num).map((comments) => ( */}
+                      {topic.comment.map((comments) => (
                         <div className=" relative group-odd:text-yellow-900  group-even:text-red-800 ">
                           <div>
                             <div className="relative flex  gap-3">
@@ -122,7 +123,9 @@ const ChatFeeds = ({ comments, topics, userProfile }) => {
                               <p>comment</p> */}
                             </div>
                             <div className="ml-16 mt-2 grid gap-2">
-                              {" "}
+                              {/* {topic.comment.length > num && (
+                                <div>more comments</div>
+                              )} */}
                               {/* {topic?.response.slice(0, num).map((reply) => (
                                 <div className="flex gap-3 ">
                                   <img
@@ -150,6 +153,16 @@ const ChatFeeds = ({ comments, topics, userProfile }) => {
                           {/* <div className="pl-4">{comments.comments}</div> */}
                         </div>
                       ))}
+                      {/* <div className="mx-auto flex w-full text-center">
+                        {num <= topic.comment.length && (
+                          <span
+                            className="text-center text-sm text-teal-600   hover:cursor-pointer"
+                            onClick={() => setNum((num) => num + 5)}
+                          >
+                            more comments...
+                          </span>
+                        )}
+                      </div> */}
                     </div>
                   </div>
                 </div>

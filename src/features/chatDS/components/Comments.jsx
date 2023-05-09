@@ -1,11 +1,13 @@
 import TextField from "components/TextField";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addComments, getComments, getTopics } from "../slice/chatSlice";
 
 const Comments = ({ topic }) => {
   const dispatch = useDispatch();
   const [reply, setReply] = useState("");
+  const inputRef = useRef(null); // Add a ref to the input
+
   const addCommentHandler = (topic) => {
     // console.log("addCommentHandler", topic);
     const data = {
@@ -13,6 +15,12 @@ const Comments = ({ topic }) => {
       topic: topic.id,
     };
     dispatch(addComments(data));
+
+    // Clear the input field value using the ref
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+
     setTimeout(() => {
       dispatch(getTopics());
     }, 1000);
@@ -32,8 +40,10 @@ const Comments = ({ topic }) => {
         type="text"
         className=" w-full  rounded-3xl pl-8"
         placeholder="type comment"
+        name="reply"
         // onKeyUp={addCommentHandler}
         onChange={onChangeHandler}
+        ref={inputRef} // Assign the ref to the input element
       />
       <div onClick={() => addCommentHandler(topic)}>
         <svg

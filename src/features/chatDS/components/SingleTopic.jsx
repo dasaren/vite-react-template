@@ -4,7 +4,7 @@ import { getUserInfo } from "features/redux-users/myUserSlice";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getTopic } from "../slice/chatSlice";
+import { getComments, getTopic } from "../slice/chatSlice";
 import Comments from "./Comments";
 import relativeTime from "dayjs/plugin/relativeTime";
 
@@ -38,6 +38,11 @@ const SingleTopic = ({ show, setShow }) => {
       dispatch(getUserInfo());
     }
   }, [dispatch, slug]);
+
+  useEffect(() => {
+    dispatch(getComments());
+    // dispatch(getTopics());
+  }, [topic]);
 
   return (
     <div>
@@ -93,7 +98,8 @@ const SingleTopic = ({ show, setShow }) => {
                     </div>
 
                     <div className="m-4 max-h-[500px] overflow-scroll   rounded bg-gray-100">
-                      {topic?.comment?.slice(0, num).map((comments) => (
+                      {/* {topic?.comment?.slice(0, num).map((comments) => ( */}
+                      {topic?.comment?.map((comments) => (
                         <div className=" relative group-odd:text-yellow-900  group-even:text-red-800 ">
                           <div>
                             <div className="relative flex  gap-3">
