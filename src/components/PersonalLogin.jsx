@@ -67,10 +67,12 @@ const PersonalLogin = () => {
 
   return (
     <Layout>
-      <div className="  grid place-content-center place-items-center items-center">
-        <div>
+      <div className="  grid place-content-center place-items-center items-center text-center">
+      <h1 className="text-4xl font-bold mb-2">Welcome to <span className=" text-teal-600">DS ENTERPRISE</span></h1>
+      <p className="text-lg mb-8">Please sign in to continue</p>
+        <div className="max-md:px-2 mx-auto">
           <form
-            className="card w-full max-w-lg p-8"
+            className="card w-full max-w-lg p-8 shadow-lg rounded bg-gray-50 "
             onSubmit={handleSubmit(submitForm)}
             // onSubmit={submitFormer}
           >

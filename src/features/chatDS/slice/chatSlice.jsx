@@ -17,6 +17,30 @@ const initialState = {
   totalPages: Number(""),
 };
 
+
+export const getDsApps = createAsyncThunk(
+  "chat/getDsApps",
+  async (args, { rejectWithValue }) => {
+    try {
+      let response = await axios.get(
+        `https://django-server-production-dac4.up.railway.app/api/dsapps/`
+        // let response = await axiosDannyInstance(
+        //   baseURL +
+        //     `api/prd/myp/?page=${args.page}&q=${args.query ? args.query : ""}`
+      );
+      if (response.status === 200) {
+        return response.data;
+      }
+    } catch (err) {
+      console.log("chat error: " + err);
+      return rejectWithValue(err.response?.data);
+    }
+  }
+);
+
+
+
+
 export const getTopics = createAsyncThunk(
   "chat/getTopics",
   async (args, { rejectWithValue }) => {
@@ -177,6 +201,26 @@ export const chatSlice = createSlice({
   reducers: (state, action) => {},
   extraReducers: (builder) => {
     builder
+
+    .addCase(getDsApps.pending, (state, action) => {
+      state.loading = true;
+    })
+    .addCase(getDsApps.fulfilled, (state, action) => {
+
+      state.app_list = action.payload.results;
+      state.loading = false;
+      state.pageCount = action.payload.count;
+      state.previousPage = action.payload.previous;
+      state.nextPage = action.payload.next;
+      state.totalPages = action.payload.results.length;
+    
+    })
+    .addCase(getDsApps.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+      state.errors = action.error.message;
+    })
+
       .addCase(getTopics.pending, (state, action) => {
         state.loading = true;
       })

@@ -14,6 +14,7 @@ const ChatLinks = ({ topics, user, userProfile }) => {
   // }, [dispatch]);
 
   // const { userProfile } = useSelector((store) => store.myuser);
+ 
   return (
     <div className="mt-3 grid gap-10">
       <div className="px-3">
@@ -52,7 +53,28 @@ const ChatLinks = ({ topics, user, userProfile }) => {
           </div>
         </div>
         {/* <Link to="/psignin"> */}
-        <div
+
+         {!userProfile[0]?.profile_pic ?
+         
+         <Link to='/psignin'>
+         <div
+          className="grid cursor-pointer grid-cols-12 hover:rounded hover:bg-gray-100"
+        >
+
+          <div className="col-span-2 text-3xl">&#9784;</div>
+
+          <div className="text-bold col-span-10 text-xl ">
+            
+         
+            Login
+            </div>
+        </div>
+         
+        </Link>
+         
+         :  
+         
+         <div
           className="grid cursor-pointer grid-cols-12 hover:rounded hover:bg-gray-100"
           onClick={() => {
             dispatch(logoutJWT());
@@ -65,8 +87,16 @@ const ChatLinks = ({ topics, user, userProfile }) => {
         >
           <div className="col-span-2 text-3xl">&#9784;</div>
 
-          <div className="text-bold col-span-10 text-xl ">Logout</div>
+          <div className="text-bold col-span-10 text-xl ">
+            
+         
+            Logout
+            </div>
         </div>
+         
+         
+         }
+        
         {/* </Link> */}
       </div>
 

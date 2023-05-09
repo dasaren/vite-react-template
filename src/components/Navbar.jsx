@@ -113,7 +113,7 @@ const Navbar = () => {
         to="/psignin"
         className="mt-4 block text-xl text-teal-200 hover:text-white lg:mt-0 lg:inline-block"
       >
-        <i className="fas fa-user"></i> Personal_Login
+        <i className="fas fa-user"></i> Login
       </NavLink>
     </div>
   );
