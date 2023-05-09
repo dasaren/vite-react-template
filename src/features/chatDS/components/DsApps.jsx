@@ -11,7 +11,7 @@ const DsApps = ({ app_list }) => {
         <p>Browse through a catalog of apps</p>
       </div>
       <div className="md:flex">
-        {app_list.length > 0 &&
+        {app_list.length  &&
           app_list.map((app) => (
             <div key={app.id} className={`card mx-2 my-2  `}>
               <div

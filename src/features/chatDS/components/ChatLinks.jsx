@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Topics from "./Topics";
 import { redirect } from "react-router-dom";
 
-const ChatLinks = ({ topics, user, userProfile }) => {
+const ChatLinks = ({ topics, user, userProfile, isAuthenticated }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const ChatLinks = ({ topics, user, userProfile }) => {
   // }, [dispatch]);
 
   // const { userProfile } = useSelector((store) => store.myuser);
- 
+
   return (
     <div className="mt-3 grid gap-10">
       <div className="px-3">
@@ -54,59 +54,44 @@ const ChatLinks = ({ topics, user, userProfile }) => {
         </div>
         {/* <Link to="/psignin"> */}
 
-         {!userProfile[0]?.profile_pic ?
-         
-         <Link to='/psignin'>
-         <div
-          className="grid cursor-pointer grid-cols-12 hover:rounded hover:bg-gray-100"
-        >
+        {!userProfile[0]?.profile_pic ? (
+          <Link to="/psignin">
+            <div className="grid cursor-pointer grid-cols-12 hover:rounded hover:bg-gray-100">
+              <div className="col-span-2 text-3xl">&#9784;</div>
 
-          <div className="col-span-2 text-3xl">&#9784;</div>
-
-          <div className="text-bold col-span-10 text-xl ">
-            
-         
-            Login
+              <div className="text-bold col-span-10 text-xl ">Login</div>
             </div>
-        </div>
-         
-        </Link>
-         
-         :  
-         
-         <div
-          className="grid cursor-pointer grid-cols-12 hover:rounded hover:bg-gray-100"
-          onClick={() => {
-            dispatch(logoutJWT());
+          </Link>
+        ) : (
+          <div
+            className="grid cursor-pointer grid-cols-12 hover:rounded hover:bg-gray-100"
+            onClick={() => {
+              dispatch(logoutJWT());
 
-            setTimeout(() => {
-              navigate("/psignin");
-              window.location.reload();
-            }, 200);
-          }}
-        >
-          <div className="col-span-2 text-3xl">&#9784;</div>
+              setTimeout(() => {
+                navigate("/psignin");
+                window.location.reload();
+              }, 200);
+            }}
+          >
+            <div className="col-span-2 text-3xl">&#9784;</div>
 
-          <div className="text-bold col-span-10 text-xl ">
-            
-         
-            Logout
-            </div>
-        </div>
-         
-         
-         }
-        
+            <div className="text-bold col-span-10 text-xl ">Logout</div>
+          </div>
+        )}
+
         {/* </Link> */}
       </div>
 
       <hr className="mx-3 border-solid border-teal-900" />
 
-      <div>
-        <Topics topics={topics} userProfile={userProfile} />
-      </div>
+      {isAuthenticated && (
+        <div>
+          <Topics topics={topics} userProfile={userProfile} />
+        </div>
+      )}
 
-      <hr className="mx-3 border-solid border-teal-900" />
+      {isAuthenticated && <hr className="mx-3 border-solid border-teal-900" />}
     </div>
   );
 };

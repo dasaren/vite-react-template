@@ -55,7 +55,12 @@ const ChatHomeScreen = () => {
           <CreateFeedModal showModal={showModal} setShowModal={setShowModal} />
         )}
         <div className="sticky  top-0 right-0 left-0 col-span-3 max-sm:hidden">
-          <ChatLinks topics={topics} userProfile={userProfile} user={user} />
+          <ChatLinks
+            topics={topics}
+            userProfile={userProfile}
+            user={user}
+            isAuthenticated={isAuthenticated}
+          />
         </div>
         {isAuthenticated ? (
           <div className="over col-span-6 max-lg:col-span-9 max-sm:col-span-12">
