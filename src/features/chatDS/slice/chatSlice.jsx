@@ -201,7 +201,6 @@ export const chatSlice = createSlice({
   reducers: (state, action) => {},
   extraReducers: (builder) => {
     builder
-
     .addCase(getDsApps.pending, (state, action) => {
       state.loading = true;
     })
