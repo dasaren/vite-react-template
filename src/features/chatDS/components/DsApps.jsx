@@ -1,6 +1,6 @@
 import Layout from "components/Layout";
 import React from "react";
-import ecommerceImage from "assets/ecommerce.png";
+// import ecommerceImage from "assets/ecommerce.png";
 import { Link } from "react-router-dom";
 
 const DsApps = ({ app_list }) => {
