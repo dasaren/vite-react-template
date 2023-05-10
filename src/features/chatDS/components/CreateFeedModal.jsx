@@ -84,9 +84,21 @@ const CreateFeedModal = ({ setShowModal, showModal }) => {
     }, 400);
   };
 
+  const windowSize = window.screen.width - 20 + "px";
+
+  const see = window.screen.width - 20;
+
+  console.log(
+    window.screen.width - 20 + "px",
+    windowSize,
+    window.screen.width,
+    typeof windowSize,
+    typeof see
+  );
+
   return (
     // <div onClick={() => setShowModal(false)} className=" z-50">
-    <div className=" z-30">
+    <div className=" z-30 ">
       <div className="modal fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center bg-blue-300 bg-opacity-80">
         <div>
           <div
@@ -95,7 +107,9 @@ const CreateFeedModal = ({ setShowModal, showModal }) => {
           >
             ❌
           </div>
-          <div className="modal-content card z-50 w-[500px] bg-white">
+          <div
+            className={`modal-content card z-50  w-[500px] bg-white max-sm:mx-auto max-sm:w-screen`}
+          >
             <div className="modal-header p-4 text-center">
               <h4>Create Feed</h4>
             </div>

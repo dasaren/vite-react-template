@@ -37,7 +37,7 @@ const ChatFeeds = ({ comments, topics, userProfile }) => {
     dispatch(deleteTopic(topic));
     setTimeout(() => {
       dispatch(getTopics());
-    }, 500);
+    }, 1000);
   };
   return (
     <div className="my-3 grid  w-full gap-2">
