@@ -148,7 +148,7 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="block lg:hidden">
+        <div className="block md:hidden">
           <button
             className="flex items-center rounded border border-teal-400 px-3 py-2 text-teal-200 hover:border-white hover:text-white max-md:flex "
             onClick={wrapMe}
