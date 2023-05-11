@@ -87,7 +87,8 @@ export const getProductss = createAsyncThunk(
   "commerce/getProductss",
   async (id = null, { rejectWithValue }) => {
     try {
-      let response = await axiosDannyInstance(baseURL + "api/prd/myp/");
+      let response = await axiosDannyInstance.get("prd/myp/");
+      // let response = await axiosDannyInstance(baseURL + "api/prd/myp/");
       if (response.status === 200) {
         return response.data;
       }

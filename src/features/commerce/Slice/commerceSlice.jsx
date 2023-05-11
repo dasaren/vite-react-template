@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosDannyInstance from "app/utils/dannysaxios";
 import axios from "axios";
 
-const baseURL = "http://127.0.0.1:8000/";
+const baseURL = "https://django-server-production-dac4.up.railway.app/";
+// const baseURL = "http://127.0.0.1:8000/";
 
 const cartItemFromStorage = JSON.parse(localStorage.getItem("cartItem"))
   ? JSON.parse(localStorage.getItem("cartItem"))
@@ -27,9 +28,9 @@ export const getProducts = createAsyncThunk(
   "commerce/getProducts",
   async (args, { rejectWithValue }) => {
     try {
-      let response = await axiosDannyInstance(
-        baseURL +
-          `api/prd/myp/?page=${args.page}&q=${args.query ? args.query : ""}`
+      let response = await axiosDannyInstance.get(
+        
+          `prd/myp/?page=${args.page}&q=${args.query ? args.query : ""}`
       );
       if (response.status === 200) {
         return response.data;
@@ -44,8 +45,8 @@ export const getProduct = createAsyncThunk(
   "commerce/getProduct",
   async (args, { rejectWithValue }) => {
     try {
-      let response = await axiosDannyInstance(
-        baseURL + "api/prd/myp/" + `${args}`
+      let response = await axiosDannyInstance.get(
+        "prd/myp/" + `${args}`
       );
       console.log("response", response);
       if (response.status === 200) {

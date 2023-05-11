@@ -60,6 +60,29 @@ function App() {
                     <Route index element={<ChatHomeScreen />} />
                     <Route path=":slug?" element={<GetTopicFeed />} />
                   </Route>
+
+
+
+                  <Route path="/main">
+                    <Route index element={<Main />} />
+                    <Route path="cart" element={<Cart />} />
+                    <Route path="admin/orders" element={<OrderList />} />
+                    <Route path="cart/checkout" element={<Checkout />} />
+                    <Route path="shipping-thank-you" element={<Success />} />
+                    <Route path="account" element={<MyAccount />} />
+                    <Route path="search" element={<Search />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route
+                      path="shipping-address"
+                      element={<ShippingAddress />}
+                    />
+                    <Route path="product/:slug?" element={<Product />} />
+                  </Route>
+
+                  {/* <Route path="/ras-product/:id?" element={<RasProduct />} />
+                  <Route path="/ras-success" element={<RasMessage />} />
+                  <Route path="ras-checkout/:id" element={<RasCheckOut />} />
+                  <Route path="ras" element={<RasHomepage />} /> */}
                 </Route>
               </Routes>
               {/* </Layout> */}
