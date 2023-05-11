@@ -23,6 +23,16 @@ import PageNotFound from "pages/PageNotFound";
 import ProfileScreen from "components/ProfileScreen";
 import ChatHomeScreen from "features/chatDS/screens/ChatHomeScreen";
 import GetTopicFeed from "features/chatDS/screens/GetTopicFeed";
+import Main from "features/commerce/Pages/Main";
+import Cart from "features/commerce/Pages/Cart";
+import OrderList from "features/commerce/Pages/OrderList";
+import Checkout from "features/commerce/Pages/Checkout";
+import Success from "features/commerce/Pages/Success";
+import MyAccount from "features/commerce/Pages/MyAccount";
+import Search from "features/commerce/Pages/Search";
+import Profile from "features/commerce/Pages/Profile";
+import ShippingAddress from "features/commerce/Pages/ShippingAddress";
+import Product from "features/commerce/Pages/Product";
 
 function App() {
   const client = new QueryClient({
