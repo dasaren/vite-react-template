@@ -41,7 +41,7 @@ const ChatHomeScreen = () => {
   };
   console.log("always", isAuthenticated, "ggggg", app_list);
   return (
-    <Layout topic="dS Social">
+    <Layout topic="dS-Social">
       {/* {error && (
         <Message>
           <span className="flex place-content-center place-items-center">
