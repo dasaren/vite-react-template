@@ -31,11 +31,11 @@ const ProductComponent = ({ product }) => {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Link to={`/main/product/${product.slug}`}>
           <span className="text-teal-600 btn success">View In Cart</span>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
