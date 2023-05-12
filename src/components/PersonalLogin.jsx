@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import AuthContext from "../app/context/AuthContext";
@@ -21,13 +21,14 @@ import FacebookLogin from "@greatsumini/react-facebook-login";
 
 // import facebookMyLogin
 
-const PersonalLogin = () => {
+const PersonalLogin = ({name}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const params = useParams()
   const redirect = location.search ? location.search.split("=")[1] : "/";
   const { registered, loading } = useSelector((state) => state.myuser);
-
+console.log('params', params)
   // useEffect(() => {}, [])
 
   const schema = yup.object().shape({

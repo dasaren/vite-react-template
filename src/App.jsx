@@ -60,7 +60,7 @@ function App() {
                   <Route path="/register" element={<RegisterPage />} />
                   <Route path="/registerme" element={<SignUp />} />
                   <Route path="/signin" element={<SignIn />} />
-                  <Route path="/psignin" element={<PersonalLogin />} />
+                  <Route path="/psignin/:slug?" element={<PersonalLogin />} />
                   <Route path="/signout" element={<SignOut />} />
                   <Route path="*" element={<PageNotFound />} />
 

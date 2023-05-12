@@ -3,7 +3,14 @@ import React from "react";
 // import ecommerceImage from "assets/ecommerce.png";
 import { Link } from "react-router-dom";
 
+
+// const sendMe =(name)=>{
+// navigate(`/psignin/${name}`)
+// }
+
 const DsApps = ({ app_list }) => {
+
+  const navigate = useNavigate()
   return (
     <div className=" mt-10  ">
       <div className="grid place-items-center">
@@ -22,7 +29,10 @@ const DsApps = ({ app_list }) => {
                 {!app.in_production && (
                   <div className="absolute inset-0 bg-gray-500 opacity-25"></div>
                 )}
-                <Link to="/psignin">
+                {/* <div onClick={()=> sendMe(app.name)}>
+                  <img src={app.app_pic} alt="" />
+                </div> */}
+                <Link to={`/psignin/${app.name}`}>
                   <img src={app.app_pic} alt="" />
                 </Link>
               </div>
