@@ -50,9 +50,13 @@ const PersonalLogin = () => {
     console.log("form", data);
     dispatch(mytoken(data));
     // dispatch(getProfile())
-
     navigate("/");
-    window.location.replace("/")
+    // setTimeout(() => {
+    //   navigate("/");
+    //   window.location.replace("/")
+    // }, 1000)
+
+
   };
 
   if (registered) return <Navigate to="/" />;
