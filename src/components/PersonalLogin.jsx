@@ -52,7 +52,7 @@ const PersonalLogin = () => {
     // dispatch(getProfile())
 
     navigate("/");
-    window.location.reload()
+    window.location.replace("/")
   };
 
   if (registered) return <Navigate to="/" />;
