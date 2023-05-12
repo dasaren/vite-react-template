@@ -30,10 +30,12 @@ export default function SignOut() {
     //   navigate("/")
     // }, 10)
     navigate("/")
-    window.location.replace("/psignin")
-    // setTimeout(()=>{
-    //   window.location.replace("/")
-    // }, 5)
+    // window.location.replace("/psignin")
+    window.location.replace("/")
+    setTimeout(()=>{
+      navigate('/')
+      // window.location.replace("/")
+    }, 900)
 
 
 
