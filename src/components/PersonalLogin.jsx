@@ -21,14 +21,14 @@ import FacebookLogin from "@greatsumini/react-facebook-login";
 
 // import facebookMyLogin
 
-const PersonalLogin = ({name}) => {
+const PersonalLogin = ({neee}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const params = useParams()
+  const {slug} = useParams()
   const redirect = location.search ? location.search.split("=")[1] : "/";
   const { registered, loading } = useSelector((state) => state.myuser);
-console.log('params', params)
+console.log('params', slug)
   // useEffect(() => {}, [])
 
   const schema = yup.object().shape({
@@ -47,15 +47,27 @@ console.log('params', params)
     resolver: yupResolver(schema),
   });
 
+  useEffect(() => {
+
+  },[slug])
+
   const submitForm = (data) => {
     console.log("form", data);
     dispatch(mytoken(data));
-    // dispatch(getProfile())
-    navigate("/");
-    // setTimeout(() => {
-    //   navigate("/");
-    //   window.location.replace("/")
-    // }, 1000)
+setTimeout(() => {
+
+  if (slug === "dS Ecommerce") {
+    navigate('/main');
+  } else if (slug === "dS Social Apps") {
+    navigate('/');
+  } else {
+    navigate('/');
+  }
+
+
+
+  
+}, 900)
 
 
   };
