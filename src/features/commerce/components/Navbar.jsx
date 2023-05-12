@@ -122,7 +122,7 @@ const Navbar = () => {
         <div className="flex">
           <Link
             to="/"
-            className="flex items-center flex-shrink-0 mr-6 text-white"
+            className="flex items-center flex-shrink-0 mr-2 text-white"
           >
             <svg
               className="w-8 h-8 mr-2 fill-current"
@@ -167,17 +167,6 @@ const Navbar = () => {
           >
             <div className="text-sm lg:flex-grow lg:flex lg:gap-3 hover:opacity-80 hover:text-red-50"></div>
 
-            <div className="text-sm lg:flex-grow lg:flex lg:gap-3">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive ? "red" : "white",
-                })}
-                to="/main/account"
-                className="block mt-4 text-xl text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
-              >
-                <span>MY ACCOUNT</span>
-              </NavLink>
-            </div>
             <div className="text-sm lg:flex-grow lg:flex lg:gap-3">
               <NavLink
                 style={({ isActive }) => ({
@@ -298,10 +287,7 @@ const Navbar = () => {
             </div>
           </div>
         )}
-        {/* <div>
-          <SearchBar />
-          <SearchB />
-        </div> */}
+      
       </nav>
     </header>
   );

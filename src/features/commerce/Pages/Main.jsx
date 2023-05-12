@@ -73,7 +73,7 @@ const Main = () => {
             )}
           </div>
          {page > 1&& <span>Navigate through the pages</span>}
-          <div className="another flex gap-2 py-7 justify-end  mx-auto ">
+         {page > 1&& <div className="another flex gap-2 py-7 justify-end  mx-auto ">
             {[...Array(getPages).keys()].map((x) => (
               <button
                 value={x + 1}
@@ -85,9 +85,13 @@ const Main = () => {
               </button>
             ))}
           </div>
+          }
+          {page > 1&& 
           <span className="btn go flex gap-x-4">
             {[...Array(getPages).keys()]}
           </span>
+          }
+
         </div>
       </div>
     </Layout>

@@ -252,20 +252,20 @@ const Checkout = () => {
         <div>
           <div id="card-element" class="mb-5"></div>
         </div>
-        <Button
+        {/* <Button
           type="submit"
           onClick={submitForm}
           className="mt-5 max-w-4xl mx-auto"
         >
           Submit
-        </Button>
+        </Button> */}
         <div className="mt-5 max-w-4xl mx-auto">
           {showForm ? (
             <Stripe />
           ) : (
             <>
               <h3>
-                {cartItem
+               $ {cartItem
                   .reduce((acc, item) => acc + item.quantity * item.price, 0)
                   .toFixed(2)}
               </h3>

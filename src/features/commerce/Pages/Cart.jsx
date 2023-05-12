@@ -24,12 +24,13 @@ const Cart = () => {
   const reload = () => {
     setTimeout(() => {
       dispatch(getCartItems());
-    }, 500);
+    }, 900);
   };
 
   const removeFromCartHandler = (product) => {
     dispatch(removeFromCart(product.id));
     reload();
+    setTimeout(()=>{}, 1000)
   };
 
   console.log("myloatuion", location);
@@ -163,7 +164,7 @@ const Cart = () => {
                                         </option>
                                       ))}
                                     </select>
-                                    <div className="grid grid-flow-col gap-1 mt-3">
+                                    {/* <div className="grid grid-flow-col gap-1 mt-3">
                                       <button className="w-[30px] h-[30px] text-center border border-gray-500 hover:text-blue-500 hover:text-2xl">
                                         +
                                       </button>
@@ -181,7 +182,7 @@ const Cart = () => {
                                       <button className="w-[30px] h-[30px] text-center border border-gray-500 hover:text-red-500 hover:text-2xl">
                                         -
                                       </button>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
                               </div>
@@ -190,7 +191,7 @@ const Cart = () => {
                         </div>
                       </div>
                       <div className="grid-rows-1 mt-2 space-x-2 ">
-                        <button
+                        {/* <button
                           type="button"
                           className={
                             product.product.countInStock > 0
@@ -199,7 +200,7 @@ const Cart = () => {
                           }
                         >
                           Confirm
-                        </button>
+                        </button> */}
                         <button
                           type="button"
                           className={
