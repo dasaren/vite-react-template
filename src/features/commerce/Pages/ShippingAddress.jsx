@@ -30,7 +30,7 @@ const ShippingAddress = () => {
     <Layout>
       <div>{/* <CheckOutStatus step1 step2 step3 step4 /> */}</div>
       <div className="mt-8">
-        <form onSubmit={submitForm} className="px-5 py-6 card w-[60%] mx-auto">
+        <form onSubmit={submitForm} className="px-5 py-6 card w-[60%] max-sm:w-[95%] mx-auto">
           <header className="mb-4 text-4xl">SHIPPING</header>
           <fieldset className="grid gap-8">
             {/* <legend className="mb-4 text-4xl">SHIPPING</legend> */}

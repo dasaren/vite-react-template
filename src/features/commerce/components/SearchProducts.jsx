@@ -1,4 +1,4 @@
-import TextField from "components/TextField";
+// import TextField from "components/TextField";
 import React, { useEffect, useState } from "react";
 
 // import { useSearchParams } from "react-router-dom";
@@ -28,14 +28,28 @@ const SearchProducts = ({ getValue }) => {
     e.preventDefault();
   };
 
+
+
   return (
-    <form onSubmit={handleSubmit} className="">
+    <form onSubmit={handleSubmit}>
       <div className="flex justify-center">
-        <div className=" xl:w-96 " >
-          <div className="relative flex flex-wrap items-stretch w-full mb-4 input-group">
+        <div className=" xl:w-96 ">
+          <div className={`${
+          window.screen.width >= 440
+            ? "max-sm:w-[230px]"
+            : window.screen.width >= 410
+            ? "max-sm:w-[210px]"
+            : window.screen.width >= 390
+            ? "max-sm:w-[190px]"
+            : window.screen.width >= 360
+            ? "max-sm:w-[160px]"
+            : window.screen.width >= 359
+            ? "max-sm:w-[140px]"
+            : "max-sm:w-[190x]"
+        }   relative flex flex-wrap items-stretch mb-4 input-group`   }>
             <input
               type="search"
-              className=" form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Search"
               aria-label="Search"
               aria-describedby="button-addon2"

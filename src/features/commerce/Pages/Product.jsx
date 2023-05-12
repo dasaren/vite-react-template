@@ -78,7 +78,7 @@ const Product = () => {
                     )}
                   </div>
                   <div className="text-4xl font-bold">
-                    Price: {product.price}
+                    Price: $ {product.price}
                   </div>
 
                   {/* <button
@@ -116,7 +116,7 @@ const Product = () => {
             <div className="">
               <div className="flex justify-between border">
                 <span>Price</span>
-                <strong>& {product.price}</strong>
+                <strong>$ {product.price}</strong>
               </div>
               <div className="flex justify-between border">
                 <span>Status</span>
@@ -138,11 +138,14 @@ const Product = () => {
                   )}
                 </strong>
               </div>
-              <div className="w-[60%]">
+              <div className="w-[60%] mt-2">
                 {product?.countInStock > 0 && (
                   <div>
                     <div className="">
-                      {/* <div className="grid ">
+                    <label htmlFor="qty" className="mr-2 ">
+                          Enter Quantity to Order
+                        </label>
+                      <div className="grid ">
                         <select
                           name=""
                           id=""
@@ -156,7 +159,7 @@ const Product = () => {
                             </option>
                           ))}
                         </select>
-                      </div> */}
+                      </div>
 
                       <div class="control mt-4 border-b">
                         <label htmlFor="qty" className="mr-2 ">

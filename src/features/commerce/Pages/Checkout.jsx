@@ -116,7 +116,7 @@ const Checkout = () => {
 
   return (
     <Layout title="cart || checkout">
-      <div className="max-w-5xl mx-auto my-3 text-gray-600">
+      <div className="max-w-5xl mx-auto my-3 text-gray-600 max-sm:mx-1">
         <h3 className="text-center text-teal-800">
           Confirm Details and Place Order
         </h3>
@@ -219,7 +219,7 @@ const Checkout = () => {
             <div className="max-w-5xl my-3 lg:px-8 mx-auto">
               <h4>Your Shipping Address</h4>
               <div className=" h-[200px] bg-gray-200">
-                <div className="w-[50%] grid gap-3 py-4 px-8">
+                <div className="w-[95%] mx-auto grid gap-3 py-4 px-8">
                   <div className="grid grid-cols-5 ">
                     <span className="col-span-2">ADDRESS</span>
                     <span className="col-span-3 uppercase">
