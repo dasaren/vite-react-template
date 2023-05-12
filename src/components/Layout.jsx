@@ -33,10 +33,6 @@ const Layout = ({ children, title, content, type, name, description }) => (
     <div className="sticky top-0 z-50 overflow-hidden ">
       <Navbar />
     </div>
-    {/* <div>
-      <DsNavbar />
-    </div> */}
-
     <div className=" min-h-screen">{children}</div>
     <div className=" ">
       <MyFooter />

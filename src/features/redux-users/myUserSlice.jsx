@@ -130,10 +130,10 @@ export const tokenLogin = createAsyncThunk(
         axiosInstance.defaults.headers["Authorization"] =
           "JWT " + localStorage.getItem("access_token");
 
-        console.log(
-          "investigate resp header:",
-          axiosInstance.defaults.headers["Authorization"]
-        );
+        // console.log(
+        //   "investigate resp header:",
+        //   axiosInstance.defaults.headers["Authorization"]
+        // );
         // localStorage.setItem('authTokens', JSON.stringify(response.data))
         // localStorage.setItem('authRefresh', response.data.refresh)
         // axiosInstance.post('token/',args)
@@ -151,26 +151,26 @@ export const tokenLogin = createAsyncThunk(
 export const mytoken = createAsyncThunk(
   "myuser/mytoken",
   async ({ email, password }, thunkAPI) => {
-    console.log(email, password, 'checking....')
+    // console.log(email, password, 'checking....')
     try {
       let response = await axios.post(`https://django-server-production-dac4.up.railway.app/api/token/`, {
         email: email,
         password: password,
       });
-      console.log("re is 200ggg", response);
-      console.log("re is 200 and ...", response.data);
+      // console.log("re is 200ggg", response);
+      // console.log("re is 200 and ...", response.data);
       if (response.status === 200) {
-        console.log("fine fine ")
-        console.log('rrrrrrrrr', response.data)
+        // console.log("fine fine ")
+        // console.log('rrrrrrrrr', response.data)
         localStorage.setItem("access_token", response.data.access);
         localStorage.setItem("refresh_token", response.data.refresh);
         axiosDannyInstance.defaults.headers["Authorization"] =
           "Bearer " + localStorage.getItem("access_token");
 
-        console.log(
-          "mytoken authothorization head",
-          axiosInstance.defaults.headers["Authorization"]
-        );
+        // console.log(
+        //   "mytoken authothorization head",
+        //   axiosInstance.defaults.headers["Authorization"]
+        // );
         return response.data;
       }
     } catch (err) {
@@ -248,7 +248,7 @@ export const register = createAsyncThunk(
   "myuser/register",
   //   async ({first_name, last_name,email,password}, thunkAPI) => {
   async (args, thunkAPI) => {
-    console.log("args", args);
+    // console.log("args", args);
     // const body = JSON.stringify({
     //   first_name,
     //   last_name,
@@ -263,7 +263,7 @@ export const register = createAsyncThunk(
         // "http://localhost:8000/api/users/register/",
         args
       );
-      console.log("auth", response);
+      // console.log("auth", response);
       if (response.status === 201) {
         return response.data;
       } else {

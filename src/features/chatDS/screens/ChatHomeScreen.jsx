@@ -20,16 +20,16 @@ const ChatHomeScreen = () => {
   const { userProfile, isAuthenticated, registered } = useSelector(
     (store) => store.myuser
   );
-  let user = userProfile[0];
+  // let user = userProfile[0];
 
   useEffect(() => {
-    if (isAuthenticated) {
+    // if (isAuthenticated) {
     dispatch(getTopics());
     dispatch(getUserInfo());
     dispatch(getComments());
     dispatch(getDsApps());
     // dispatch(getUse)
-    }
+    // }
   }, [isAuthenticated, dispatch]);
 
   const selectTopicHandler = () => {
@@ -58,7 +58,7 @@ const ChatHomeScreen = () => {
           <ChatLinks
             topics={topics}
             userProfile={userProfile}
-            user={user}
+            // user={user}
             isAuthenticated={isAuthenticated}
           />
         </div>
