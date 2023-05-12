@@ -23,13 +23,13 @@ const ChatHomeScreen = () => {
   let user = userProfile[0];
 
   useEffect(() => {
-    // if (isAuthenticated) {
+    if (isAuthenticated) {
     dispatch(getTopics());
     dispatch(getUserInfo());
     dispatch(getComments());
     dispatch(getDsApps());
     // dispatch(getUse)
-    // }
+    }
   }, [isAuthenticated, dispatch]);
 
   const selectTopicHandler = () => {
