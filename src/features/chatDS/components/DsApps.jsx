@@ -1,7 +1,7 @@
 import Layout from "components/Layout";
 import React from "react";
 // import ecommerceImage from "assets/ecommerce.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 // const sendMe =(name)=>{
