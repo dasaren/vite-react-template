@@ -5,10 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useCookies } from "react-cookie";
-import AuthContext from "app/context/AuthContext";
 import { logoutJWT } from "features/redux-users/myUserSlice";
-import SearchBar from "features/posts/SearchBar";
-import SearchB from "features/posts/SearchB";
 import { getCartItems } from "../Slice/cartSlice";
 import SearchProducts from "./SearchProducts";
 import { getProducts } from "../Slice/commerceSlice";
@@ -88,14 +85,7 @@ const Navbar = () => {
         </div>
       </Link>
 
-      <Link to="/signout">
-        <div
-          className=" block mt-4 text-xl text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
-          onClick={() => dispatch(logoutJWT)}
-        >
-          p SignOut
-        </div>
-      </Link>
+     
     </>
   );
 
@@ -108,20 +98,20 @@ const Navbar = () => {
       >
         Register
       </NavLink>
-      <NavLink
+      {/* <NavLink
         style={({ isActive }) => ({ color: isActive ? "red" : "white" })}
         to="/registerme"
         className="block mt-4 text-xl text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
       >
         Rregister
-      </NavLink>
+      </NavLink> */}
 
       <NavLink
         style={({ isActive }) => ({ color: isActive ? "red" : "white" })}
         to="/psignin"
         className="block mt-4 text-xl text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
       >
-        <i className="fas fa-user"></i> Personal_Login
+        <i className="fas fa-user"></i> Login
       </NavLink>
     </>
   );

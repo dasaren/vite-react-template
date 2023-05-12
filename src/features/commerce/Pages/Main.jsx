@@ -34,10 +34,10 @@ const Main = () => {
   return (
     <Layout title="ds online-shop">
       <div className="max-w-5xl mx-auto px-3 text-gray-500 mb-2">
-        <div className="grid place-content-center mt-10 text-teal-600 text-center gap-4">
-          <p className="text-4xl">DS ENTERPRISE</p>
+        <div className="grid place-content-center mt-5 text-teal-600 text-center gap-4">
+          <p className="text-4xl max-sm:text-[30px]">DS COMMERCE</p>
           <div>
-            <p className="text-2xl">BEST QUALITY E-COMMERCE ONLINE SHOP</p>
+            <p className="text-2xl max-sm:text-[20px]">BEST QUALITY E-COMMERCE ONLINE SHOP</p>
           </div>
         </div>
         <hr className="max-w-4xl mx-auto font-extrabold px-8 my-5 border border-teal-900 border-solid" />
@@ -72,7 +72,7 @@ const Main = () => {
               </btn>
             )}
           </div>
-          <span>Navigate through the pages</span>
+         {page > 1&& <span>Navigate through the pages</span>}
           <div className="another flex gap-2 py-7 justify-end  mx-auto ">
             {[...Array(getPages).keys()].map((x) => (
               <button
