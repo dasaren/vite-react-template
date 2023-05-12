@@ -5,7 +5,7 @@ const ProductComponent = ({ product }) => {
   console.log("here", product);
   return (
     <div className="relative">
-      <div className="grid grid-cols-8 ">
+      <div className="grid grid-cols-8 p-1">
         <div className="col-span-4 mr-1 grid gap-1">
          <Link to={product.get_image}>
           <img src={product?.get_thumbnail} alt={product.name} className="" />
@@ -17,8 +17,9 @@ const ProductComponent = ({ product }) => {
             )} */}
             </Link>
         </div>
-        <div className="col-span-4">
+        <div className="col-span-4 hover:text-teal-500">
           <div className="grid gap-3">
+          <Link to={`/main/product/${product.slug}`}>
             <div className="grid  grid-cols-2">
               <p className="col-span-1 font-semibold">Name</p>
               <p className="col-span-1">{product.name}</p>
@@ -28,6 +29,7 @@ const ProductComponent = ({ product }) => {
               <p className="col-span-1 font-semibold">Price</p>
               <p className="col-span-1">${product.price}</p>
             </div>
+            </Link>
           </div>
         </div>
       </div>
