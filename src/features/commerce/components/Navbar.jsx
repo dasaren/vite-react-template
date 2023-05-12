@@ -119,10 +119,10 @@ const Navbar = () => {
   return (
     <header className="bg-teal-400">
       <nav className="flex flex-wrap items-center justify-between max-w-6xl p-6 mx-auto transition  delay-150 duration-1000 ease-in-out">
-        <div className="flex">
+        <div className="flex justify-around" >
           <Link
             to="/"
-            className="flex items-center flex-shrink-0 mr-2 text-white"
+            className="flex items-center flex-shrink-0 mr-2 text-white mr-4"
           >
             <svg
               className="w-8 h-8 mr-2 fill-current"
@@ -139,10 +139,41 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <div className="flex mt-3">
+          <div className="flex mt-3 max-sm:hidden mx-4">
             <SearchProducts getValue={getValue} />
+
           </div>
+          <div className="lg:flex-grow lg:flex lg:gap-3 lg:mt-4  max-sm:mb-2 max-sm:pb-2">
+          <NavLink
+                style={({ isActive }) => ({
+                  color: isActive ? "red" : "white",
+                })}
+                to="/main/cart"
+                className="block mt-4 text-xl text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
+              >
+                <span class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>{" "}
+                <span>CART({cartItem?.length})</span>
+              </NavLink>
+          </div>
+
+          
         </div>
+        {/* <div className="text-sm lg:flex-grow lg:flex lg:gap-3">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive ? "red" : "white",
+                })}
+                to="/main/cart"
+                className="block mt-4 text-xl text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
+              >
+                <span class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>{" "}
+                <span>CART({cartItem?.length})</span>
+              </NavLink>
+            </div> */}
 
         <div className="block lg:hidden">
           <button
@@ -167,7 +198,8 @@ const Navbar = () => {
           >
             <div className="text-sm lg:flex-grow lg:flex lg:gap-3 hover:opacity-80 hover:text-red-50"></div>
 
-            <div className="text-sm lg:flex-grow lg:flex lg:gap-3">
+           
+            {/* <div className="text-sm lg:flex-grow lg:flex lg:gap-3 ">
               <NavLink
                 style={({ isActive }) => ({
                   color: isActive ? "red" : "white",
@@ -180,7 +212,7 @@ const Navbar = () => {
                 </span>{" "}
                 <span>CART({cartItem?.length})</span>
               </NavLink>
-            </div>
+            </div> */}
             <div className="text-sm lg:flex-grow lg:flex lg:gap-3"></div>
             <div className="text-sm lg:flex-grow lg:flex lg:gap-3"></div>
             <div className="lg:flex lg:gap-3 ">
@@ -188,21 +220,14 @@ const Navbar = () => {
               {/* {isAuthenticated ? authLinks : guestLinks} */}
               {/* {user ? authLinks : guestLinks} */}
             </div>
-            <div className="lg:flex lg:gap-3"></div>
+            {/* <div className="lg:flex lg:gap-3"></div> */}
 
             <div>
-              <span className="text-white">
+              {/* <span className="text-white">
                 {localUser != null && localUser.email}
-              </span>
+              </span> */}
+              
               {/* <div>
-              {user ? (
-                <Link to="/logout">Logout</Link>
-              ) : (
-                <Link to="/dennis">Login</Link>
-              )}
-            </div> */}
-              {/* <div> {user && <span>@ {user.email}</span>}</div> */}
-              <div>
                 <div className="flex justify-center">
                   <div>
                     <div className="relative dropdown">
@@ -283,7 +308,7 @@ const Navbar = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
