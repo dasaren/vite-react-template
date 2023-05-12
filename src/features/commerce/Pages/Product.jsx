@@ -45,13 +45,13 @@ const Product = () => {
           </Link>
           {loading && loader}
         </div>
-        <div className="grid w-[100%]  sm:grid-cols-12 md:grid-rows-1 m-auto mx-2  mt-3">
+        <div className="grid w-[100%]  sm:grid-cols-12 md:grid-rows-1 m-auto mx-2  mt-3 max-md:my-1">
           <div className="md:col-span-4 sm:col-span-12 ">
             <div className="w-full">
               <div className="w-full bg-white rounded-lg shadow-lg md:max-w-xs">
                 <div className="w-full">
                   <img
-                    className="rounded-t-lg h-[280px] w-full  "
+                    className="rounded-t-lg h-[290px] w-full  "
                     src={product?.get_thumbnail}
                     alt="img"
                   />
@@ -81,14 +81,14 @@ const Product = () => {
                     Price: {product.price}
                   </div>
 
-                  <button
+                  {/* <button
                     type="button"
                     className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out "
                     color={" #f8e825"}
                     //   onClick={() => postSingle(post)}
                   >
                     Button
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -116,7 +116,7 @@ const Product = () => {
             <div className="">
               <div className="flex justify-between border">
                 <span>Price</span>
-                <strong>{product.price}</strong>
+                <strong>& {product.price}</strong>
               </div>
               <div className="flex justify-between border">
                 <span>Status</span>
@@ -142,7 +142,7 @@ const Product = () => {
                 {product?.countInStock > 0 && (
                   <div>
                     <div className="">
-                      <div className="grid ">
+                      {/* <div className="grid ">
                         <select
                           name=""
                           id=""
@@ -156,7 +156,7 @@ const Product = () => {
                             </option>
                           ))}
                         </select>
-                      </div>
+                      </div> */}
 
                       <div class="control mt-4 border-b">
                         <label htmlFor="qty" className="mr-2 ">
