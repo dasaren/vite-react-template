@@ -70,8 +70,12 @@ setTimeout(() => {
   } else if (slug === "dS Social Apps") {
     dispatch(getTopics());
     // return redirect("/");
-    navigate('/');
-    window.location.reload();
+    
+
+    setTimeout(() => {
+      navigate('/');
+    }, 500);
+    // window.location.reload();
    
   // dispatch(getUserInfo());
   // dispatch(getComments());
@@ -82,7 +86,7 @@ setTimeout(() => {
     // }, 800);
   } else {
     navigate('/');
-    window.location.reload();
+    // window.location.reload();
     // window.location.reload();
   }
   
