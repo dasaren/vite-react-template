@@ -70,11 +70,14 @@ setTimeout(() => {
 
     setTimeout(() => {
       navigate('/');
+      window.location.reload();
+      
     }, 800);
 
   
   } else {
     navigate('/');
+    window.location.reload();
   }
   
 
