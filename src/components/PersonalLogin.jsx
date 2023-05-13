@@ -71,6 +71,7 @@ setTimeout(() => {
     dispatch(getTopics());
     // return redirect("/");
     navigate('/');
+    window.location.reload();
    
   // dispatch(getUserInfo());
   // dispatch(getComments());
@@ -81,12 +82,9 @@ setTimeout(() => {
     // }, 800);
   } else {
     navigate('/');
+    window.location.reload();
     // window.location.reload();
   }
-  
-
-
-
   
 }, 900)
 
