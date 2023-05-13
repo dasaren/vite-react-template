@@ -93,14 +93,14 @@ const Cart = () => {
                 </div>
               </div>
             ) : (
-              <div className="mx-3">
+              <div className="mx-3 py-2">
                 {cartItem.map((product) => (
                   <div
                     key={product.id}
                     className="flex gap-3 px-2 py-3 my-2 border md:grid md:grid-cols-12 max-sm:grid p-2"
                   >
                     {/* {JSON.stringify(product)} */}
-                    <div className="md:col-span-6 max-sm:w-[100%]">
+                    <div className="md:col-span-6 max-sm:w-[100%] col-span-12">
                       <img
                         src={product?.product?.get_thumbnail}
                         alt={product.name}

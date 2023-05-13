@@ -128,7 +128,7 @@ const Product = () => {
                 <span>Quantity in stock</span>
                 <strong>{product.countInStock}</strong>
               </div>
-              <div className="flex justify-between border font-bold text-2xl">
+              <div className="flex justify-between border font-bold text-teal-900">
                 <span>Quantity you are ordering</span>
                 <strong>
                   {product.countInStock > 0 ? (
@@ -142,10 +142,10 @@ const Product = () => {
                 {product?.countInStock > 0 && (
                   <div>
                     <div className="">
-                    <label htmlFor="qty" className="mr-2 ">
+                    <label htmlFor="qty" className="mr-2  max-sm:hidden">
                           Enter Quantity to Order
                         </label>
-                      <div className="grid ">
+                      <div className="grid  max-sm:hidden">
                         <select
                           name=""
                           id=""
@@ -161,7 +161,7 @@ const Product = () => {
                         </select>
                       </div>
 
-                      <div class="control mt-4 border-b">
+                      <div class="control mt-4 border-b md:hidden">
                         <label htmlFor="qty" className="mr-2 ">
                           Enter Quantity to Order
                         </label>
