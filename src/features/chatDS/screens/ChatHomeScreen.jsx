@@ -62,7 +62,7 @@ const ChatHomeScreen = () => {
             isAuthenticated={isAuthenticated}
           />
         </div>
-        {isAuthenticated ? (
+        {isAuthenticated || registered ? (
           <div className="over col-span-6 max-lg:col-span-9 max-sm:col-span-12">
             <div
               className="card my-3 flex h-16 p-2  hover:cursor-pointer"

@@ -67,10 +67,11 @@ setTimeout(() => {
   if (slug === "dS Ecommerce") {
     navigate('/main');
   } else if (slug === "dS Social Apps") {
-    navigate('/');
     dispatch(getTopics());
-  dispatch(getUserInfo());
-  dispatch(getComments());
+    navigate('/');
+   
+  // dispatch(getUserInfo());
+  // dispatch(getComments());
       // setTimeout(() => {
     //   navigate('/');
     //   window.location.reload();
