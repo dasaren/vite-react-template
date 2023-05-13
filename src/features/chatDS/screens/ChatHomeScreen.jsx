@@ -24,10 +24,13 @@ const ChatHomeScreen = () => {
 
   useEffect(() => {
     // if (isAuthenticated) {
-    dispatch(getTopics());
-    dispatch(getUserInfo());
+      dispatch(getUserInfo());
+      dispatch(getTopics());
     // dispatch(getComments());
     dispatch(getDsApps());
+
+
+    
     // dispatch(getUse)
     // }
   }, [isAuthenticated, dispatch]);

@@ -69,8 +69,9 @@ const ChatLinks = ({ topics, user, userProfile, isAuthenticated }) => {
               dispatch(logoutJWT());
 
               setTimeout(() => {
-                navigate("/psignin");
                 window.location.reload();
+                navigate("/");
+               
               }, 600);
             }}
           >
