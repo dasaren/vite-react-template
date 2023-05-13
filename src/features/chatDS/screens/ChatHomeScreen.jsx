@@ -26,7 +26,7 @@ const ChatHomeScreen = () => {
     // if (isAuthenticated) {
     dispatch(getTopics());
     dispatch(getUserInfo());
-    dispatch(getComments());
+    // dispatch(getComments());
     dispatch(getDsApps());
     // dispatch(getUse)
     // }
