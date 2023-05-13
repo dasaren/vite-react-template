@@ -67,14 +67,16 @@ console.log('params', slug)
 setTimeout(() => {
   if (slug === "dS Ecommerce") {
     navigate('/main');
-  } else if (slug === "dS Social Apps") {
-    dispatch(getTopics());
+  } 
+  
+  else if (slug === "dS Social Apps") {
+    // dispatch(getTopics());
     // return redirect("/");
     
 
     setTimeout(() => {
       navigate('/');
-    }, 500);
+    }, 200);
     // window.location.reload();
    
   // dispatch(getUserInfo());
@@ -85,12 +87,16 @@ setTimeout(() => {
       
     // }, 800);
   } else {
-    navigate('/');
+    
+    setTimeout(() => {
+      navigate('/');
+    }, 500);
+   
     // window.location.reload();
     // window.location.reload();
   }
   
-}, 900)
+}, 1000)
 
 
   };
