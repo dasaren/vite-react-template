@@ -173,7 +173,13 @@ const Product = () => {
                           name="qty"
                           v-model="qty"
                           value={qty}
-                          onChange={(e) => setQty(e.target.value)}
+                          // onChange={(e) => setQty(e.target.value)}
+                          onChange={(e) => {
+                            if (e.target.value > product?.countInStock) {
+                              e.target.value = product?.countInStock;
+                            }
+                            setQty(e.target.value);
+                          }}
                         />
                       </div>
                     </div>

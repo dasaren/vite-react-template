@@ -19,7 +19,7 @@ const ChatLinks = ({ topics, user, userProfile, isAuthenticated }) => {
     <div className="mt-3 grid gap-10">
       <div className="px-3">
         <div className="grid grid-cols-12">
-          <div className="col-span-3 rounded-full">
+          <div className="col-span-3">
             <img src={userProfile[0]?.profile_pic} alt="" className="rounded-full " />
           </div>
 
