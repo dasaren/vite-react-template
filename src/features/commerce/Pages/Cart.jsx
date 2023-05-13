@@ -108,7 +108,7 @@ const Cart = () => {
                       />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6 card">
+                    <div className="col-span-12 md:col-span-6 card p-1">
                       <strong className="">Product Summary</strong>
                       <div className="grid">
                         <div className="">
@@ -205,8 +205,8 @@ const Cart = () => {
                           type="button"
                           className={
                             product.product.countInStock > 0
-                              ? "inline-block px-6 py-2.5 btn bg-red-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-900 hover:shadow-lg focus:bg-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-500 active:shadow-lg transition duration-150 ease-in-out "
-                              : "disabled:btn bg-gray-400 mt-3 cursor-not-allowed py-2 px-3 rounded"
+                            ? "inline-block px-6 py-2.5 btn bg-red-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-900 hover:shadow-lg focus:bg-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-500 active:shadow-lg transition duration-150 ease-in-out "
+                            : "disabled:btn bg-gray-400 mt-3 cursor-not-allowed py-2 px-3 rounded"
                           }
                           onClick={() => removeFromCartHandler(product)}
                         >
@@ -244,8 +244,8 @@ const Cart = () => {
                   // disabled={cartItem.length > 2}
                   className={
                     cartItem.length > 0
-                      ? "cursor-progress mt-3 inline-block px-6 py-2.5 btn bg-red-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-900 hover:shadow-lg focus:bg-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-500 active:shadow-lg transition duration-150 ease-in-out mb-4 "
-                      : " disabled:btn bg-gray-400 mt-3 cursor-not-allowed py-2 px-3 rounded mb-4"
+                      ? "max-sm:mb-2 cursor-progress mt-3 inline-block px-6 py-2.5 btn bg-red-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-900 hover:shadow-lg focus:bg-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-500 active:shadow-lg transition duration-150 ease-in-out mb-4 "
+                      : "max-sm:mb-2 disabled:btn bg-gray-400 mt-3 cursor-not-allowed py-2 px-3 rounded mb-4"
                   }
                   onClick={() => proceedToCheckoutHandler()}
                 >

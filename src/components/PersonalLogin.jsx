@@ -12,12 +12,14 @@ import Layout from "./Layout";
 import {
   facebookLogin,
   getProfile,
+  getUserInfo,
   mysocialtokenlogin,
   mytoken,
   tokenLogin,
 } from "features/redux-users/myUserSlice";
 import Button from "./Button";
 import FacebookLogin from "@greatsumini/react-facebook-login";
+import { getComments, getTopics } from "features/chatDS/slice/chatSlice";
 
 // import facebookMyLogin
 
@@ -59,10 +61,22 @@ setTimeout(() => {
   if (slug === "dS Ecommerce") {
     navigate('/main');
   } else if (slug === "dS Social Apps") {
-    navigate('/');
+
+
+    dispatch(getTopics());
+    dispatch(getUserInfo());
+    dispatch(getComments());
+    
+
+    setTimeout(() => {
+      navigate('/');
+    }, 800);
+
+  
   } else {
     navigate('/');
   }
+  
 
 
 
