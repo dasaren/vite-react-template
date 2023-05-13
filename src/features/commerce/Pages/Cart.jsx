@@ -97,7 +97,7 @@ const Cart = () => {
                 {cartItem.map((product) => (
                   <div
                     key={product.id}
-                    className="flex gap-3 px-2 py-3 my-2 border md:grid md:grid-cols-12 max-sm:grid"
+                    className="flex gap-3 px-2 py-3 my-2 border md:grid md:grid-cols-12 max-sm:grid p-2"
                   >
                     {/* {JSON.stringify(product)} */}
                     <div className="md:col-span-6 max-sm:w-[100%]">

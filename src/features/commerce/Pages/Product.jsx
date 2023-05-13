@@ -169,6 +169,7 @@ const Product = () => {
                           type="number"
                           class="input"
                           min="1"
+                          max={product?.countInStock}
                           name="qty"
                           v-model="qty"
                           value={qty}
