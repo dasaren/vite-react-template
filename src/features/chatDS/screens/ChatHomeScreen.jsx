@@ -20,7 +20,7 @@ const ChatHomeScreen = () => {
   const { userProfile, isAuthenticated, registered } = useSelector(
     (store) => store.myuser
   );
-  // let user = userProfil
+  // let user = userProfile
 
   useEffect(() => {
     // if (isAuthenticated) {
