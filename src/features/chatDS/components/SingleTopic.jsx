@@ -56,7 +56,7 @@ const SingleTopic = ({ show, setShow }) => {
                 <img
                   src={topic.created_by?.profile_pic}
                   alt=""
-                  className="h-[30px] w-[30px]"
+                  className="h-[30px] w-[30px] rounded-full"
                 />
                 <div className=" grid">
                   <p>{topic.created_by?.username}</p>
@@ -204,7 +204,7 @@ const SingleTopic = ({ show, setShow }) => {
                 <img
                   src={userProfile[0]?.profile_pic}
                   alt=""
-                  className="h-5 w-5 "
+                  className="h-5 w-5  rounded-full"
                 />
               </div>
               <div className="mr-2 mb-3 w-full ">

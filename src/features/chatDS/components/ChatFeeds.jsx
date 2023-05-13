@@ -98,7 +98,7 @@ const ChatFeeds = ({ comments, topics, userProfile }) => {
                               <img
                                 src={comments.host.profile_pic}
                                 alt=""
-                                className="h-6 w-6"
+                                className="h-6 w-6 rounded-full"
                               />{" "}
                               <div className="mx-auto   w-[90%] rounded-3xl bg-gray-300 py-2 px-3 ">
                                 <div className="flex justify-between font-bold text-teal-800">
