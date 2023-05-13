@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { redirect } from "react-router-dom";
 
 import AuthContext from "../app/context/AuthContext";
 import Layout from "./Layout";
@@ -68,6 +69,7 @@ setTimeout(() => {
     navigate('/main');
   } else if (slug === "dS Social Apps") {
     dispatch(getTopics());
+    // return redirect("/");
     navigate('/');
    
   // dispatch(getUserInfo());
