@@ -90,7 +90,7 @@ setTimeout(() => {
     
     setTimeout(() => {
       navigate('/');
-    }, 500);
+    }, 200);
    
     // window.location.reload();
     // window.location.reload();
