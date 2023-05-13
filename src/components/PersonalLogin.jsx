@@ -56,28 +56,29 @@ console.log('params', slug)
   const submitForm = (data) => {
     console.log("form", data);
     dispatch(mytoken(data));
-setTimeout(() => {
 
+// setTimeout(() => {
+ 
+  
+// }, 200);
+
+    
+setTimeout(() => {
   if (slug === "dS Ecommerce") {
     navigate('/main');
   } else if (slug === "dS Social Apps") {
-
-
+    navigate('/');
     dispatch(getTopics());
-    dispatch(getUserInfo());
-    dispatch(getComments());
-    
-
-    setTimeout(() => {
-      navigate('/');
-      window.location.reload();
+  dispatch(getUserInfo());
+  dispatch(getComments());
+      // setTimeout(() => {
+    //   navigate('/');
+    //   window.location.reload();
       
-    }, 800);
-
-  
+    // }, 800);
   } else {
     navigate('/');
-    window.location.reload();
+    // window.location.reload();
   }
   
 
@@ -91,7 +92,7 @@ setTimeout(() => {
 
   if (registered) return <Navigate to="/" />;
 
-  if (localStorage.getItem("isAuthenticated")) return <Navigate to="/" />;
+  // if (localStorage.getItem("isAuthenticated")) return <Navigate to="/" />;
 
   const logMeIn = (response) => {
     console.log(response);
